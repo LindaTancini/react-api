@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+// IMPORTAZIONI
+import Main from "./components/main";
 
 function App() {
-  return <></>;
+  return <Main />;
 }
 
 export default App;
