@@ -1,6 +1,7 @@
 // IMPORTAZIONI
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Card from "./card";
 
 // PRENDO LE API E LE METTO DENTRO UNA VARIABILE ENDPOINT
 const endpoint = "https://www.freetestapi.com/api/v1/actresses";
@@ -22,6 +23,7 @@ function Main() {
   return (
     <div>
       <h1>Lista Attrici</h1>
+      <Card />
     </div>
   );
 }
