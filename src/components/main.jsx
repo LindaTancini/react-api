@@ -33,12 +33,15 @@ function Main() {
       console.log("Ho chiamato le API degli ATTORI:", result.data);
     });
   }
-  return (
-    <>
-      {/* ATTRICI */}
+  //SENZA SECONDO BONUS
+  //return (
+  //<>
+  {
+    /* 
+      // ATTRICI 
       <div className="container mt-5">
         <h1 className="mb-4">Lista Attrici</h1>
-        {/* ITERO CON MAP PER CERCARE I DATI DELLE ATTRICI E CREARCI UNA CARD */}
+        // ITERO CON MAP PER CERCARE I DATI DELLE ATTRICI E CREARCI UNA CARD 
         <div className="row">
           {actresses.map((actress) => (
             <div className="col-4 mb-4" key={actress.id}>
@@ -55,10 +58,10 @@ function Main() {
         </div>
       </div>
 
-      {/* ATTORI */}
+      // ATTORI 
       <div className="container mt-5">
         <h1 className="mb-4">Lista Attori</h1>
-        {/* ITERO CON MAP PER CERCARE I DATI DEGLI ATTORI E CREARCI UNA CARD */}
+      // ITERO CON MAP PER CERCARE I DATI DEGLI ATTORI E CREARCI UNA CARD 
         <div className="row">
           {actors.map((actor) => (
             <div className="col-4 mb-4" key={actor.id}>
@@ -69,6 +72,33 @@ function Main() {
                 biografia={actor.biography}
                 riconoscimenti={actor.awards}
                 immagine={actor.image}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      */
+  }
+  // </>
+  //);
+
+  // SECONDO BONUS
+  return (
+    <>
+      {/* LISTA UNICA CON ATTRICI E ATTORI */}
+      <div className="container mt-5">
+        <h1 className="mb-4">Lista Attrici e Attori:</h1>
+        {/* UNISCO I DUE ARRAY CON IL METODO CONCAT -> SERVE  A COMBINARE PIU' ARRAY ASSIEME */}
+        <div className="row">
+          {actresses.concat(actors).map((actressActor) => (
+            <div className="col-4 mb-4" key={actressActor.id}>
+              <Card
+                nome={actressActor.name}
+                annoNascita={actressActor.birth_year}
+                nazionalità={actressActor.nationality}
+                biografia={actressActor.biography}
+                riconoscimenti={actressActor.awards}
+                immagine={actressActor.image}
               />
             </div>
           ))}
