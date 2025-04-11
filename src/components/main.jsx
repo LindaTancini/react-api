@@ -21,22 +21,24 @@ function Main() {
       console.log("Ho chiamato le API:", result.data);
     });
   }
-
   return (
-    <div>
-      <h1>Lista Attrici</h1>
+    <div className="container mt-5">
+      <h1 className="mb-4">Lista Attrici</h1>
       {/*ITINERO CON MAP PER CERCARE I DATI DELLE ATTRICI E CREARCI UNA CARD*/}
-      {actresses.map((actress) => (
-        <Card
-          key={actress.id}
-          nome={actress.name}
-          annoNascita={actress.birth_year}
-          nazionalità={actress.nationality}
-          biografia={actress.biography}
-          riconoscimenti={actress.awards}
-          immagine={actress.image}
-        />
-      ))}
+      <div className="row">
+        {actresses.map((actress) => (
+          <div className="col-4 mb-4" key={actress.id}>
+            <Card
+              nome={actress.name}
+              annoNascita={actress.birth_year}
+              nazionalità={actress.nationality}
+              biografia={actress.biography}
+              riconoscimenti={actress.awards}
+              immagine={actress.image}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
