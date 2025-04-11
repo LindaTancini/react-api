@@ -1,13 +1,20 @@
 //CREO FUNZIONE CARD CHE COMPRENDE LA SUA STRUTTURA HTML
-function Card() {
+function Card({
+  nome,
+  annoNascita,
+  nazionalità,
+  biografia,
+  riconoscimenti,
+  immagine,
+}) {
   return (
     <div>
-      <h2>Nome Attrice:</h2>
-      <p>Anno di Nascita:</p>
-      <p>Nazionalità:</p>
-      <p>Biografia:</p>
-      <p>Immagine:</p>
-      <p>Riconoscimenti:</p>
+      <h2>{nome}</h2>
+      <p>{annoNascita}</p>
+      <p>{nazionalità}</p>
+      <p>{biografia}</p>
+      <p>{riconoscimenti}:</p>
+      <img src={immagine} alt={nome} />
     </div>
   );
 }

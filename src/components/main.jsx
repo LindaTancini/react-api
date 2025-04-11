@@ -25,7 +25,18 @@ function Main() {
   return (
     <div>
       <h1>Lista Attrici</h1>
-      <Card />
+      {/*ITINERO CON MAP PER CERCARE I DATI DELLE ATTRICI E CREARCI UNA CARD*/}
+      {actresses.map((actress) => (
+        <Card
+          key={actress.id}
+          nome={actress.name}
+          annoNascita={actress.birth_year}
+          nazionalità={actress.nationality}
+          biografia={actress.biography}
+          riconoscimenti={actress.awards}
+          immagine={actress.image}
+        />
+      ))}
     </div>
   );
 }
